@@ -1,93 +1,206 @@
-# os
+## 📚 **Project Overview**
 
+The **OS Project** is a **standalone Java client-server application**. It features a **backend** for processing images and managing data, and a **frontend** built with **JavaFX** for the graphical user interface.
 
+The main functionalities of this project include:
 
-## Getting started
+- **Image Loading**: Support for various image formats (PBM, PGM, PPM) to process and convert images.
+- **File Conversion**: Ability to save and convert images into multiple file formats.
+- **Graphical User Interface (GUI)**: User-friendly, interactive UI for seamless user experience.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+This project follows a **modular structure** with clear separation between **frontend** and **backend** components, enabling scalability and maintainability.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+---
 
-## Add your files
+# 🌐 **Translation (I18N) Support**
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+The application supports **I18N (Internationalization)** to provide a multilingual user experience. Using the **I18N module**, the user interface (UI) can be displayed in different languages based on the user's preferences or system locale.
 
+### **Supported Languages**
+
+The application currently supports the following languages:
+
+- 🇺🇸 **English (en)**
+- 🇮🇹 **Italian (it)**
+- 🇫🇷 **French (fr)**
+- 🇩🇪 **Deutsch (de)**
+
+### **How it Works**
+
+1. **Translation Files**: Each supported language has a dedicated **properties file** (e.g., `messages_en.properties`, `messages_it.properties`).
+2. **Cold Language Switching**: The user can switch the application language by restarting the app.
+3. **Last Language used**: save in `user.prefs file` .
+
+The **I18N system** ensures that all UI elements, error messages, and system prompts are displayed in the correct language.
+
+---
+
+# 🖼️ **Available Filters and Transformations**
+
+| **Filter/Transformation** | **Description**                  |
+| ------------------------- | -------------------------------- |
+| **Grayscale**             | Converts the image to grayscale. |
+| **Rotate Right**          | Rotate right of 90 degrees.      |
+| **Rotate Left**           | Rotate left of 90 degrees.       |
+| **Flip Horizontally**     | Flips the image horizontally.    |
+| **Flip Vertically**       | Flips the image vertically.      |
+
+---
+
+# 📊 **Status Bar Communication**
+
+The **status bar** provides real-time feedback on system events.
+
+---
+
+## 📂 **Project Structure**
+
+```plaintext
+os/
+├── backend/                 # Backend logic and server-side operations
+│   ├── src/                 # Source code for backend
+│   ├── pom.xml              # Maven configuration file for backend dependencies
+│   └── target/              # Compiled classes and build artifacts
+│
+├── frontend/                # Frontend logic and GUI
+│   ├── src/                 # Source code for frontend
+│   ├── pom.xml              # Maven configuration file for frontend dependencies
+│   └── target/              # Compiled classes and build artifacts
+│
+├── .gitignore               # List of files and folders to ignore in Git
+├── .gitlab-ci.yml           # GitLab CI/CD configuration file
+└── README.md                # Project documentation file (this file)
 ```
-cd existing_repo
-git remote add origin https://gitlab-edu.supsi.ch/dti-isin/labingsw/labingsw02/20242025/group06/os.git
-git branch -M main
-git push -uf origin main
+
+---
+
+## 🔍 **System Architecture**
+
+The system follows a client-server architecture where the frontend serves as the client and the backend serves as the server. The frontend GUI interacts with the backend to send requests for image processing and conversion.
+
+          +-------------------+        +------------------+
+          |                   |        |                  |
+          |     Frontend      | <----> |     Backend      |
+          |  (JavaFX + GUI)   |        |  (Standalone)    |
+          |                   |        |  (Pure Java)     |
+          +-------------------+        +------------------+
+
+---
+
+## ⚙️ **Backend Overview**
+
+The **backend** handles the processing logic and acts as the **server-side** of the application. It processes image files, manages conversions, and sends responses to the frontend when requested.
+
+### **Main Features**
+
+- **Image Loading**: Handles the loading of image files in PBM, PGM, and PPM formats.
+- **Image Conversion**: Converts images to other formats (like PBM, PGM, PPM) using internal handlers.
+- **File Handling**: Manages saving and loading images from disk.
+
+## 💻 **Frontend Overview**
+
+The **frontend** is a graphical user interface (GUI) built using JavaFX. It allows users to upload images, visualize them, and interact with the backend for image processing and conversion.
+
+### **Main Features**
+
+- **Interactive User Interface**: Allows users to load, view, and convert image files.
+- **Image Upload**: Users can upload files and view them directly in the application.
+- **File Conversion**: Users can convert image files into PBM, PGM, and PPM formats.
+
+---
+
+## 📃 **CI/CD Pipeline**
+
+The project uses **GitLab CI/CD** to automate the testing and deployment process. The `.gitlab-ci.yml` file defines the steps required to build and deploy the application automatically when changes are pushed to the repository.
+
+---
+
+### 🛠️ **Installation Guide**
+
+To set up and run the **2Dimageeditor** on your system, follow the instructions below:
+
+---
+
+#### **Prerequisites**
+
+Ensure you have the following software installed on your system:
+
+1. **Java Development Kit (JDK)** - Version 11 or higher.  
+   [Download JDK](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+
+2. **Apache Maven** - Used for building the project.  
+   [Download Maven](https://maven.apache.org/download.cgi)
+
+3. **Git** - For cloning the repository.  
+   [Download Git](https://git-scm.com/downloads)
+
+---
+
+#### **Installation Steps**
+
+1. **Clone the Repository**  
+   Open a terminal and execute the following command to clone the project repository:  
+   ```bash
+   git clone https://gitlab.com/your-repository-link/os-project.git
+   cd os-project
+   ```
+
+2. **Build the Backend Module**  
+   Navigate to the backend directory and build the module using Maven:  
+   ```bash
+   cd backend
+   mvn clean install
+   cd ..
+   ```
+
+3. **Build the Frontend Module**  
+   Navigate to the frontend directory and build the module using Maven:  
+   ```bash
+   cd frontend
+   mvn clean install
+   cd ..
+   ```
+
+4. **Run the Application**  
+   - Start the **backend server**:  
+     ```bash
+     java -jar backend/target/backend.jar
+     ```  
+   - Start the **frontend client**:  
+     ```bash
+     java -jar frontend/target/frontend.jar
+     ```
+
+5. **Access the Application**  
+   Once both the backend and frontend are running, the GUI will launch automatically, allowing you to start using the application.
+
+---
+
+#### **Environment Variables**
+
+If required, you can configure environment variables to customize paths or settings for the application. These variables can be set in your terminal or system settings:
+
+- **`APP_CONFIG_PATH`**: Path to the application configuration file.
+- **`USER_PREFS_FILE`**: Path to save user preferences (e.g., selected language).
+
+Example (Linux/Mac):  
+```bash
+export APP_CONFIG_PATH=/path/to/config
+export USER_PREFS_FILE=/path/to/user.prefs
 ```
 
-## Integrate with your tools
+Example (Windows - Command Prompt):  
+```cmd
+set APP_CONFIG_PATH=C:\path\to\config
+set USER_PREFS_FILE=C:\path\to\user.prefs
+```
 
-- [ ] [Set up project integrations](https://gitlab-edu.supsi.ch/dti-isin/labingsw/labingsw02/20242025/group06/os/-/settings/integrations)
+---
 
-## Collaborate with your team
+#### **Troubleshooting**
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+- Ensure all dependencies (JDK, Maven) are correctly installed and added to your system's PATH.
+- Verify that the backend is running before starting the frontend.
+- Check for compilation errors by running `mvn clean install` in both the `backend` and `frontend` directories.
+- Review the `logs/` directory for error messages if something goes wrong.
 
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
