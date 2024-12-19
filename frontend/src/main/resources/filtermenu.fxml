@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="ch.supsi.os.frontend.controller.FilterMenuController">
+    <left>
+        <VBox fx:id="leftBox" spacing="10" prefWidth="130">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <!-- Top Section -->
+            <VBox fx:id="leftTopBox" alignment="CENTER" spacing="10">
+                <Label fx:id="labelEditSection" text="Edit Section"/>
+
+                <Region prefHeight="5" />
+
+                <Button fx:id="leftTopButton" disable="true" onAction="#rotateLeft" style="-fx-background-color: rgba(220, 220, 220, 0.8);">
+                    <graphic>
+                        <ImageView fitWidth="35" fitHeight="35">
+                            <image>
+                                <Image url="@/SampleImage/rotate-left-icon.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="%tooltip.rotateLeft" />
+                    </tooltip>
+                </Button>
+
+                <Region prefHeight="5" />
+
+                <Button fx:id="leftTopButton1" disable="true" onAction="#rotateRight" style="-fx-background-color: rgba(220, 220, 220, 0.8);">
+                    <graphic>
+                        <ImageView fitWidth="35" fitHeight="35">
+                            <image>
+                                <Image url="@/SampleImage/rotate-right-icon.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="%tooltip.rotateRight" />
+                    </tooltip>
+                </Button>
+
+                <Region prefHeight="5" />
+
+                <Button fx:id="leftTopButton2" disable="true" onAction="#flipHorizontally" style="-fx-background-color: rgba(220, 220, 220, 0.8);">
+                    <graphic>
+                        <ImageView fitWidth="35" fitHeight="35">
+                            <image>
+                                <Image url="@/SampleImage/mirror-icon-vertical.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="%tooltip.flipHorizontally" />
+                    </tooltip>
+                </Button>
+
+                <Region prefHeight="5" />
+
+                <Button fx:id="leftTopButton3" disable="true" onAction="#flipVertically" style="-fx-background-color: rgba(220, 220, 220, 0.8);">
+                    <graphic>
+                        <ImageView fitWidth="35" fitHeight="35">
+                            <image>
+                                <Image url="@/SampleImage/mirror-icon-horizontal.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="%tooltip.flipVertically" />
+                    </tooltip>
+                </Button>
+            </VBox>
+
+            <!-- Spacer Region to add more space -->
+            <Region prefHeight="15" />
+
+            <!-- Separator -->
+            <Separator orientation="HORIZONTAL" />
+
+            <!-- Bottom Section -->
+            <VBox fx:id="leftBottomBox" alignment="CENTER" spacing="10">
+                <Label fx:id="labelFilterSection" text="Filter Section"/>
+                <Region prefHeight="5" />
+
+                <Button fx:id="leftBottomButton" disable="true" onAction="#negative" style="-fx-background-color: rgba(220, 220, 220, 0.8);">
+                    <graphic>
+                        <ImageView fitWidth="35" fitHeight="35">
+                            <image>
+                                <Image url="@/SampleImage/negative-icon.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="%tooltip.negative" />
+                    </tooltip>
+                </Button>
+            </VBox>
+        </VBox>
+    </left>
+</BorderPane>

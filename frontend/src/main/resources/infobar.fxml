@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane fx:id="scrollPane" fitToWidth="true" prefHeight="75" maxHeight="150" xmlns:fx="http://javafx.com/fxml">
+    <VBox fx:id="messageBox" fillWidth="true" spacing="5">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+    </VBox>
+</ScrollPane>

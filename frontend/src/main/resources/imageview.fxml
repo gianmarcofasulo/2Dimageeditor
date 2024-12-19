@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ch.supsi.os.frontend.controller.ImageController">
+
+    <!-- Pane that will contain the Canvas and allow it to resize -->
+    <Pane>
+        <Canvas fx:id="canvas" width="500" height="500"/>
+    </Pane>
+</VBox>

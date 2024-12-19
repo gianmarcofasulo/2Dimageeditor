@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<Menu mnemonicParsing="false" xmlns="http://javafx.com/javafx/8" fx:controller="ch.supsi.os.frontend.controller.FileMenuController" xmlns:fx="http://javafx.com/fxml/1" >
+    <MenuItem fx:id="miOpen" mnemonicParsing="false" onAction="#openImage"/>
+    <SeparatorMenuItem mnemonicParsing="false"/>
+    <MenuItem fx:id="miSave" mnemonicParsing="false" onAction="#saveImage" />
+    <MenuItem fx:id="miSaveAs" mnemonicParsing="false" onAction="#saveImageAs"/>
+    <SeparatorMenuItem mnemonicParsing="false"/>
+    <MenuItem fx:id="miQuit" mnemonicParsing="false" onAction="#quit" />
+</Menu>

@@ -1,0 +1,7 @@
+.step-label {
+    -fx-border-color: gray;
+    -fx-border-width: 0 0 1 0; /* Bottom border only */
+    -fx-padding: 5 0 5 0;     /* Vertical padding for balanced spacing */
+    -fx-alignment: center;    /* Center text alignment */
+    -fx-text-alignment: center; /* Center text within the label */
+}
